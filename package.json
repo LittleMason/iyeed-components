@@ -1,12 +1,13 @@
 {
-  "name": "iyeed-ui",
-  "version": "1.0.3",
+  "name": "iyeed-ui-beta",
+  "version": "1.0.0",
   "description": "iyeed company front-end components base of Vue.js",
   "entry": "packages/index.js",
   "main": "lib/index.js",
   "module": "lib/index.module.js",
   "scripts": {
     "build": "yarn clean && rollup -c",
+    "yalc": "npm run build && yalc publish",
     "test": "jest",
     "lint": "eslint ./packages --ext .vue,.js,.ts",
     "lint-fix": "eslint --fix ./packages --ext .vue,.js,.ts",

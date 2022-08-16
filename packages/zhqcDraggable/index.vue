@@ -4,11 +4,9 @@
     :title="title"
     :visible.sync="visible"
     :width="width"
-    :before-close="handleClose"
     :append-to-body="appendToBody"
     class="page-dialog-draggable"
     :class="className"
-    :close-on-click-modal="false"
   >
     <div class="board-column">
       <!--      <div class="board-column-header">-->
@@ -125,7 +123,7 @@ export default {
     // 弹窗标题
     title: {
       type: String,
-      default: '自定义列'
+      default: '自定义列33'
     },
     // 弹窗是否显示
     visible: {
@@ -192,11 +190,6 @@ export default {
       return this.btList.filter(item => !item.hasOwnProperty('show') || (item.hasOwnProperty('show') && item.show))
     }
   },
-  watch: {
-    visible(val) {
-      this.$emit('update:visible', val)
-    }
-  },
   methods: {
     addDate() {
       this.diaFormInfo.type = 'add'
@@ -246,10 +239,6 @@ export default {
       // Detail see : https://github.com/RubaXa/Sortable/issues/1012
       dataTransfer.setData('Text', '')
     },
-    // 获取按钮列表
-    // getConfigList () {
-    //   return this.btList.filter(item => !item.hasOwnProperty('show') || (item.hasOwnProperty('show') && item.show))
-    // },
     // 绑定的相关事件
     handleEvent(evnet) {
       this.$emit('handleEvent', evnet)
@@ -257,10 +246,6 @@ export default {
     // 派发按钮点击事件
     handleClick(event, data) {
       this.$emit('handleClick', event, data)
-    },
-    // 关闭弹窗前的回调
-    handleClose(done) {
-      this.$emit('update:visible', false)
     }
   }
 }

@@ -234,7 +234,6 @@ export default {
     this.$emit("update:refObj", this.$refs.pageform);
   },
   methods: {
-    // 得到placeholder的显示table.inputthis.$t('button.ok')
     getPlaceholder(row) {
       let placeholder;
       if (this.formType === "view") {
@@ -245,13 +244,13 @@ export default {
         row.type === "textarea" ||
         row.type === "kinput"
       ) {
-        placeholder = this.$t("table.input") + row.label;
+        placeholder = '请输入' + row.label;
       } else if (
         row.type === "select" ||
         row.type === "time" ||
         row.type === "date"
       ) {
-        placeholder = this.$t("table.select") + row.label;
+        placeholder = '请选择' + row.label;
       } else {
         placeholder = row.label;
       }

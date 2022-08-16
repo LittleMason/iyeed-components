@@ -3,9 +3,8 @@
     <!-- <scroll-pane ref="scrollPane"> -->
     <ul class="tabs">
       <li
-        v-for="item in tabsList"
+        v-for="item in tabs"
         :key="item.value"
-        v-waves
         class="tabs__item"
         :class="{ tabs__item_select: activeName === item.value }"
         :style="{
@@ -19,7 +18,7 @@
     </ul>
     <!-- </scroll-pane> -->
     <div class="contain">
-      <template v-for="item in tabsList">
+      <template v-for="item in tabs">
         <div v-show="item.value == activeName" :key="item.value" class="contain__inner fade">
           <slot :name="[item.value]" />
         </div>
@@ -44,7 +43,7 @@ export default {
       type: [Number, String],
       default: ''
     },
-    tabsList: {
+    tabs: {
       type: Array,
       default: () => {
         return [
@@ -136,7 +135,7 @@ export default {
       height: 100%;
     }
   }
-  /deep/.el-scrollbar__wrap {
+  .el-scrollbar__wrap {
     height: auto !important;
     margin-bottom: -10px !important;
   }
