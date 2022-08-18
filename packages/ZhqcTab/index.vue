@@ -5,6 +5,7 @@
       <li
         v-for="item in tabs"
         :key="item.value"
+        v-waves
         class="tabs__item"
         :class="{ tabs__item_select: activeName === item.value }"
         :style="{
@@ -28,12 +29,8 @@
 </template>
 
 <script>
-// import ScrollPane from '@/Subassembly/ScrollPane'
 export default {
   name: 'ZhqcTabsTwo',
-  components: {
-    //  ScrollPane
-  },
   model: {
     prop: 'activeName',
     event: 'change'
@@ -46,24 +43,7 @@ export default {
     tabs: {
       type: Array,
       default: () => {
-        return [
-          // {
-          //   label: '基础资料',
-          //   value: '1'
-          // },
-          // {
-          //   label: '文件上传',
-          //   value: '2'
-          // },
-          // {
-          //   label: '参数修改',
-          //   value: '3'
-          // },
-          // {
-          //   label: '三池管理',
-          //   value: '4'
-          // }
-        ]
+        return []
       }
     },
     bgGradient: {
@@ -101,8 +81,6 @@ export default {
   display: flex;
   margin-top: 5px;
   margin-bottom: 0;
-  // margin-top: 10px;
-  // margin-bottom: 5px;
   .tabs__item {
     list-style: none;
     text-align: center;

@@ -1,6 +1,6 @@
 {
-  "name": "iyeed-ui-beta",
-  "version": "1.0.0",
+  "name": "iyeed-ui",
+  "version": "0.0.1",
   "description": "iyeed company front-end components base of Vue.js",
   "entry": "packages/index.js",
   "main": "lib/index.js",
