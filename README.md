@@ -58,5 +58,3 @@ locale.use('en-US');
 
 ### Load Error Info
 
-## add
-
